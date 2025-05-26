@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: p808ez5we-python
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: p808ez5we-python 
+  name: p808ez5we-python
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: p808ez5we-python
+    weight: 100 
